@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Celestine Nelson Abraham | Computer Scientist & AI Engineer</title>
+<meta name="description" content="Portfolio of Celestine Nelson Abraham: Computer Scientist, AI/Agentic Systems Engineer, Data Scientist and Software Architect.">
+<style>
+:root,[data-theme="dark"]{--bg:#0b1020;--bg2:#111833;--card:#151d3b;--line:#243058;--text:#e6e9f5;--muted:#9aa5c7;--accent:#5b8cff;--accent2:#22d3b6;--nav:rgba(11,16,32,.85);--chipt:#b9ccff;--chipg:#9df0e0;--shadow:rgba(0,0,0,.35);--input:#0f1630;--overlay:rgba(5,8,18,.75);}
+[data-theme="light"]{--bg:#f5f7fc;--bg2:#e9eefb;--card:#ffffff;--line:#d9e0f2;--text:#141a33;--muted:#55607f;--accent:#3b6df0;--accent2:#0f9d8a;--nav:rgba(245,247,252,.88);--chipt:#2a4ab5;--chipg:#0b6e60;--shadow:rgba(40,60,120,.15);--input:#f5f7fc;--overlay:rgba(20,26,51,.55);}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;transition:background .3s,color .3s}
+a{color:inherit;text-decoration:none}
+section{padding:90px 6%;max-width:1200px;margin:0 auto}
+h2.title{font-size:2rem;margin-bottom:8px}
+h2.title span{color:var(--accent2)}
+.bar{width:60px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent2));margin:12px 0 28px}
+.sub{color:var(--muted);margin:-14px 0 28px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--nav);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:background .3s}
+.nav-in{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 6%;gap:14px}
+.logo{font-weight:700;font-size:1.15rem}
+.logo b{color:var(--accent2)}
+.links{display:flex;gap:24px;list-style:none}
+.links a{color:var(--muted);font-size:.92rem;transition:.2s}
+.links a:hover{color:var(--accent2)}
+.nav-r{display:flex;align-items:center;gap:10px}
+.theme{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--text);font-size:1.1rem;cursor:pointer;transition:.25s;display:grid;place-items:center}
+.theme:hover{border-color:var(--accent2);transform:rotate(20deg)}
+.burger{display:none;background:none;border:0;color:var(--text);font-size:1.6rem;cursor:pointer}
+
+/* HERO */
+#home{min-height:100vh;display:flex;align-items:center;gap:50px;padding-top:120px;flex-wrap:wrap-reverse;justify-content:space-between}
+.hero-text{flex:1 1 420px}
+.hi{color:var(--accent2);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.85rem}
+.hero-text h1{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.1;margin:12px 0}
+.grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-size:1.2rem;color:var(--muted);min-height:1.8em;margin-bottom:18px}
+.hero-text p.lead{color:var(--muted);max-width:560px;margin-bottom:28px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{padding:12px 26px;border-radius:10px;font-weight:600;transition:.25s;border:1px solid transparent;cursor:pointer;display:inline-block;font-size:1rem;font-family:inherit}
+.btn.p{background:linear-gradient(90deg,var(--accent),#7a5bff);color:#fff}
+.btn.p:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(91,140,255,.35)}
+.btn.p:disabled{opacity:.6;cursor:not-allowed;transform:none;box-shadow:none}
+.btn.o{border-color:var(--line);color:var(--text);background:transparent}
+.btn.o:hover{border-color:var(--accent2);color:var(--accent2)}
+.avatar-wrap{flex:0 1 300px;display:flex;justify-content:center}
+.avatar{width:270px;height:270px;border-radius:50%;padding:5px;background:linear-gradient(135deg,var(--accent),var(--accent2));animation:float 5s ease-in-out infinite}
+.avatar div{width:100%;height:100%;border-radius:50%;background:var(--bg2);display:grid;place-items:center;font-size:4.5rem;font-weight:700;overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}
+@keyframes float{50%{transform:translateY(-14px)}}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-top:50px;width:100%}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+.stat h3{font-size:1.9rem;color:var(--accent2)}
+.stat p{color:var(--muted);font-size:.85rem}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
+.about-grid p{color:var(--muted);margin-bottom:16px}
+.info{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px}
+.info li{list-style:none;padding:10px 0;border-bottom:1px solid var(--line);font-size:.93rem;display:flex;justify-content:space-between;gap:12px}
+.info li:last-child{border:0}
+.info li span:first-child{color:var(--muted)}
+.info li span:last-child{text-align:right;word-break:break-word}
+
+/* SKILLS */
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.skill-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;transition:.3s}
+.skill-card:hover{transform:translateY(-6px);border-color:var(--accent)}
+.skill-card h3{margin-bottom:14px;font-size:1.05rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:.78rem;padding:5px 12px;border-radius:20px;background:rgba(91,140,255,.12);color:var(--chipt);border:1px solid rgba(91,140,255,.28)}
+.chip.g{background:rgba(34,211,182,.1);color:var(--chipg);border-color:rgba(34,211,182,.3)}
+
+/* PROJECTS */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.f{background:none;border:1px solid var(--line);color:var(--muted);padding:8px 18px;border-radius:20px;cursor:pointer;transition:.2s;font-size:.88rem;font-family:inherit}
+.f.on,.f:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column;transition:.3s;position:relative;overflow:hidden}
+.proj::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.proj:hover{transform:translateY(-6px);box-shadow:0 18px 40px var(--shadow)}
+.proj h3{font-size:1.15rem;margin-bottom:6px}
+.tag{font-size:.72rem;color:var(--accent2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;font-weight:600}
+.proj ul{margin:12px 0 16px 18px;color:var(--muted);font-size:.9rem}
+.proj li{margin-bottom:7px}
+.proj .chips{margin-top:auto}
+.badge{display:inline-block;font-size:.7rem;background:rgba(251,191,36,.18);color:#d99a06;padding:2px 10px;border-radius:12px;margin-left:8px;vertical-align:middle}
+
+/* BLOG */
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+.post{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;cursor:pointer;transition:.3s;display:flex;flex-direction:column;text-align:left;font-family:inherit;color:inherit;padding:0}
+.post:hover{transform:translateY(-6px);box-shadow:0 18px 40px var(--shadow);border-color:var(--accent)}
+.post:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
+.post-top{height:120px;display:grid;place-items:center;font-size:3rem}
+.post-body{padding:22px;display:flex;flex-direction:column;flex:1}
+.post-meta{font-size:.78rem;color:var(--muted);margin-bottom:8px;display:flex;gap:10px;flex-wrap:wrap}
+.post-meta .cat{color:var(--accent2);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.post h3{font-size:1.1rem;margin-bottom:8px;line-height:1.35}
+.post p{color:var(--muted);font-size:.9rem;margin-bottom:14px}
+.post .more{margin-top:auto;color:var(--accent);font-weight:600;font-size:.88rem}
+.note{font-size:.8rem;color:var(--muted);margin-top:22px;text-align:center;font-style:italic}
+
+/* MODAL */
+.modal{position:fixed;inset:0;background:var(--overlay);z-index:100;display:none;align-items:flex-start;justify-content:center;padding:5vh 16px;overflow-y:auto;backdrop-filter:blur(4px)}
+.modal.open{display:flex}
+.m-box{background:var(--card);border:1px solid var(--line);border-radius:20px;max-width:760px;width:100%;padding:36px;position:relative;animation:pop .3s ease}
+@keyframes pop{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.m-close{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--bg2);color:var(--text);font-size:1.2rem;cursor:pointer}
+.m-close:hover{border-color:var(--accent2);color:var(--accent2)}
+.m-box h2{font-size:1.7rem;line-height:1.25;margin:6px 40px 6px 0}
+.m-box h4{margin:22px 0 8px;color:var(--accent2)}
+.m-box p,.m-box li{color:var(--muted);margin-bottom:12px}
+.m-box ul{margin-left:20px}
+.m-box code{background:var(--bg2);padding:2px 7px;border-radius:6px;font-size:.88em;color:var(--text)}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:'';position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.t-item{position:relative;margin-bottom:34px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.t-item::before{content:'';position:absolute;left:-32px;top:28px;width:16px;height:16px;border-radius:50%;background:var(--accent2);border:3px solid var(--bg)}
+.t-item h3{font-size:1.1rem}
+.t-item .meta{color:var(--accent);font-size:.85rem;margin:3px 0 12px}
+.t-item ul{margin-left:18px;color:var(--muted);font-size:.92rem}
+.t-item li{margin-bottom:6px}
+
+/* EDU */
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px}
+.box h3{margin-bottom:16px;color:var(--accent2);font-size:1.05rem}
+.box li{list-style:none;padding:8px 0 8px 22px;position:relative;color:var(--muted);font-size:.92rem;border-bottom:1px dashed var(--line)}
+.box li:last-child{border:0}
+.box li::before{content:'▹';position:absolute;left:0;color:var(--accent)}
+.box li b{color:var(--text)}
+
+/* CONTACT */
+.c-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:30px;align-items:start}
+.c-info{display:flex;flex-direction:column;gap:14px}
+.c-card{background:var(--card);border:1px solid var(--line);padding:16px 20px;border-radius:14px;transition:.25s;font-size:.93rem;word-break:break-word}
+a.c-card:hover{border-color:var(--accent2);transform:translateX(4px)}
+.c-card small{display:block;color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.07em}
+.c-form{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fld{margin-bottom:16px}
+.fld label{display:block;font-size:.85rem;margin-bottom:6px;color:var(--muted)}
+.fld input,.fld textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--input);color:var(--text);font:inherit;transition:.2s}
+.fld input:focus,.fld textarea:focus{outline:none;border-color:var(--accent2);box-shadow:0 0 0 3px rgba(34,211,182,.18)}
+.fld textarea{min-height:140px;resize:vertical}
+.fld .err{color:#ef5b5b;font-size:.78rem;margin-top:4px;display:none}
+.fld.bad input,.fld.bad textarea{border-color:#ef5b5b}
+.fld.bad .err{display:block}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+.status{margin-top:14px;padding:12px 14px;border-radius:10px;font-size:.9rem;display:none}
+.status.ok{display:block;background:rgba(34,211,182,.12);color:var(--chipg);border:1px solid rgba(34,211,182,.3)}
+.status.fail{display:block;background:rgba(239,91,91,.12);color:#ef5b5b;border:1px solid rgba(239,91,91,.35)}
+footer{text-align:center;padding:30px;color:var(--muted);border-top:1px solid var(--line);font-size:.85rem}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(30px);transition:.7s}
+.rv.show{opacity:1;transform:none}
+
+@media(max-width:860px){
+ .about-grid,.c-wrap{grid-template-columns:1fr}
+ .burger{display:block}
+ .links{position:absolute;top:100%;left:0;right:0;background:var(--bg2);flex-direction:column;padding:20px 6%;gap:16px;display:none;border-bottom:1px solid var(--line)}
+ .links.open{display:flex}
+ .proj-grid{grid-template-columns:1fr}
+ section{padding:70px 5%}
+ .row{grid-template-columns:1fr;gap:0}
+ .m-box{padding:26px 20px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+<script event.preventDefault(); async src="https://whatsform.com/launcher.js" id="wf-widget" data-id="3orvey" data-message="Message on WhatsApp" window.open(whatsappUrl, '_blank');></script>
+</head>
+<body>
+
+<nav>
+ <div class="nav-in">
+  <a href="#home" class="logo">Celestine<b>.</b>Abraham</a>
+  <ul class="links" id="links">
+   <li><a href="#about">About</a></li>
+   <li><a href="#skills">Skills</a></li>
+   <li><a href="#projects">Projects</a></li>
+   <li><a href="#blog">Blog</a></li>
+   <li><a href="#experience">Experience</a></li>
+   <li><a href="#education">Education</a></li>
+   <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-r">
+   <button class="theme" id="theme" aria-label="Switch to light mode" title="Toggle dark / light">☀️</button>
+   <button class="burger" id="burger" aria-label="Menu">☰</button>
+  </div>
+ </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+ <div class="hero-text">
+  <div class="hi">Hello, I'm</div>
+  <h1>Celestine Nelson <span class="grad">Abraham</span></h1>
+  <div class="role"><span id="typed"></span><span style="color:var(--accent2)">|</span></div>
+  <p class="lead">A computer scientist solving problems across AI/machine learning, agentic systems, data science, software engineering, robotics and network engineering, with 6+ years of experience helping start-ups build and ship.</p>
+  <div class="btns">
+   <a href="#projects" class="btn p">View My Work</a>
+   <a href="#contact" class="btn o">Get In Touch</a>
+  </div>
+ </div>
+ <div class="avatar-wrap">
+  <div class="avatar"><div id="av">CNA</div></div>
+ </div>
+ <div class="stats">
+  <div class="stat"><h3>6+</h3><p>Years Experience</p></div>
+  <div class="stat"><h3>10+</h3><p>Projects Delivered</p></div>
+  <div class="stat"><h3>5</h3><p>DataCamp Certificates</p></div>
+  <div class="stat"><h3>99%+</h3><p>DataCamp XP Rank</p></div>
+ </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+ <div class="rv">
+  <h2 class="title">About <span>Me</span></h2><div class="bar"></div>
+  <div class="about-grid">
+   <div>
+    <p>I'm a Computer Scientist and founder of Prince and Prince Technologies Ltd. I design and deliver scalable software, AI-driven automation and data systems for businesses, from secure agentic AI workflows to inclusive fintech platforms.</p>
+    <p>My background spans AI/ML, agentic web development, data science, software engineering, robotics, network engineering and security systems &amp; surveillance. I've mastered multiple programming languages and care deeply about testing, debugging and building software that is reliable and secure.</p>
+    <p>Beyond code, I'm a team lead and mentor who has trained developers, data scientists and robotics engineers, and a volunteer at the Engaged Youth Africa Initiative.</p>
+    <div class="chips" style="margin-top:18px">
+     <span class="chip g">Problem Solver</span><span class="chip g">Goal Oriented</span><span class="chip g">Creative</span><span class="chip g">Leader</span><span class="chip g">Coachable</span>
+    </div>
+   </div>
+   <div class="info">
+    <ul>
+     <li><span>Name</span><span>Celestine Nelson Abraham</span></li>
+     <li><span>Location</span><span>Osogbo, Nigeria</span></li>
+     <li><span>Degree</span><span>BSc Computer Science</span></li>
+     <li><span>Role</span><span>Founder &amp; Technical Director</span></li>
+     <li><span>Email</span><span>nelsoncelestine222@gmail.com</span></li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+ <div class="rv">
+  <h2 class="title">Technical <span>Skills</span></h2><div class="bar"></div>
+  <div class="skill-grid">
+   <div class="skill-card"><h3>🤖 AI &amp; Agentic Systems</h3><div class="chips">
+    <span class="chip">ADK 2.0</span><span class="chip">Agentic Workflows</span><span class="chip">Ambient Agents</span><span class="chip">Antigravity</span><span class="chip">Agents CLI</span><span class="chip">LLM Orchestration</span><span class="chip">Prompt Injection Guardrails</span><span class="chip">Human-in-the-Loop</span><span class="chip">LLM-as-Judge Evals</span></div></div>
+   <div class="skill-card"><h3>🧠 AI Frameworks &amp; Tooling</h3><div class="chips">
+    <span class="chip">Google X Kaggle Agent Framework</span><span class="chip">Stateful Graph Workflows</span><span class="chip">Code-Based Routing</span><span class="chip">PII Redaction Pipelines</span><span class="chip">Machine Learning</span></div></div>
+   <div class="skill-card"><h3>☁️ Backend &amp; Cloud</h3><div class="chips">
+    <span class="chip">Pub/Sub Triggers</span><span class="chip">Event-Driven Architecture</span><span class="chip">API Integration</span><span class="chip">Local Benchmarking</span><span class="chip">curl / CLI Evals</span><span class="chip">SQL on Cloud</span></div></div>
+   <div class="skill-card"><h3>💻 Programming Languages</h3><div class="chips">
+    <span class="chip g">Python</span><span class="chip g">JavaScript</span><span class="chip g">Java</span><span class="chip g">Kotlin</span><span class="chip g">C++</span><span class="chip g">C</span><span class="chip g">PHP</span><span class="chip g">SQL</span><span class="chip g">HTML5</span><span class="chip g">CSS</span><span class="chip g">Bootstrap</span><span class="chip g">Visual Basic</span></div></div>
+   <div class="skill-card"><h3>📊 Data &amp; Engineering</h3><div class="chips">
+    <span class="chip">Data Science</span><span class="chip">Web Development</span><span class="chip">Software Engineering</span><span class="chip">Network Engineering</span><span class="chip">Graphic Design</span><span class="chip">Streamlit</span><span class="chip">FastAPI</span><span class="chip">React Native</span><span class="chip">Jetpack Compose</span></div></div>
+   <div class="skill-card"><h3>🤝 Soft Skills</h3><div class="chips">
+    <span class="chip g">Communication</span><span class="chip g">Critical Thinking</span><span class="chip g">Time Management</span><span class="chip g">Creativity</span><span class="chip g">Problem Solving</span><span class="chip g">Leadership</span><span class="chip g">Office Management</span></div></div>
+  </div>
+ </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+ <div class="rv">
+  <h2 class="title">Featured <span>Projects</span></h2><div class="bar"></div>
+  <div class="filters">
+   <button class="f on" data-f="all">All</button>
+   <button class="f" data-f="ai">AI &amp; Agents</button>
+   <button class="f" data-f="mobile">Mobile</button>
+   <button class="f" data-f="data">Data Science</button>
+   <button class="f" data-f="web">Web &amp; Systems</button>
+  </div>
+  <div class="proj-grid" id="pg">
+
+   <div class="proj" data-c="ai">
+    <div class="tag">AI · Agentic Systems</div>
+    <h3>Autonomous Enterprise Expense Agent</h3>
+    <ul>
+     <li>Engineered an event-driven ambient AI agent with Google ADK and Gemini to automate multi-tier corporate expense evaluation and risk scoring.</li>
+     <li>Built graph-based routing with zero-latency auto-approval for low-risk expenses (&lt;$100) and Human-in-the-Loop checkpoints (RequestInput) for manual sign-off.</li>
+     <li>Hardened the agent with a multi-layer security checkpoint that redacts PII (SSNs, credit cards) and blocks prompt injection before it reaches the LLM.</li>
+     <li>Built end-to-end integration and evaluation suites simulating Pub/Sub payloads for deterministic state transitions.</li>
+    </ul>
+    <div class="chips"><span class="chip">Python</span><span class="chip">Google ADK</span><span class="chip">Gemini API</span><span class="chip">Pydantic</span><span class="chip">FastAPI</span><span class="chip">Pytest</span></div>
+   </div>
+
+   <div class="proj" data-c="ai">
+    <div class="tag">AI · Security</div>
+    <h3>Secure AI Shopping Assistant &amp; Threat Lab</h3>
+    <ul>
+     <li>Developed a conversational retail assistant with custom tools for single-use promo code redemption and customer support.</li>
+     <li>Authored an enterprise STRIDE 6-pillar threat model covering spoofing, credential leakage, privilege escalation and memory-exhaustion DoS.</li>
+     <li>Established shift-left AI security guardrails: custom Semgrep rules, pre-commit hooks and strict Pydantic validation of LLM tool arguments.</li>
+     <li>Architected test suites for concurrency, case-insensitivity and state idempotency to prevent duplicate-redemption exploits.</li>
+    </ul>
+    <div class="chips"><span class="chip">Python</span><span class="chip">Google ADK</span><span class="chip">Gemini Flash</span><span class="chip">Semgrep</span><span class="chip">STRIDE</span><span class="chip">Git Hooks</span><span class="chip">Pytest</span></div>
+   </div>
+
+   <div class="proj" data-c="mobile web">
+    <div class="tag">Fintech · Accessibility</div>
+    <h3>Inclusive Banking App (IBA)<span class="badge">In Progress</span></h3>
+    <ul>
+     <li>Technical Team Lead &amp; Software Engineer directing architecture, sprint planning and delivery of a cross-platform (iOS/Android) inclusive banking platform.</li>
+     <li>Authored the SRS and designed scalable client-server architecture integrating core banking APIs with secure biometric authentication.</li>
+     <li>Championed WCAG AAA: local-language voice commands, AI-powered visual bill recognition and haptic feedback for visually/hearing-impaired and low-literacy users.</li>
+     <li>Engineered an offline USSD fallback for uninterrupted transactions in low-connectivity regions.</li>
+    </ul>
+    <div class="chips"><span class="chip">React Native</span><span class="chip">Node.js</span><span class="chip">REST APIs</span><span class="chip">AI/NLP Speech</span><span class="chip">Biometrics</span><span class="chip">USSD</span><span class="chip">WCAG AAA</span></div>
+   </div>
+
+   <div class="proj" data-c="mobile">
+    <div class="tag">Mobile</div>
+    <h3>Native Android Jetpack Compose Suite</h3>
+    <ul>
+     <li>Built a suite of native Android apps using declarative UI and reactive state management in Jetpack Compose.</li>
+     <li>Implemented modular layouts (quadrantUI, TaskManager, ComposeArticle) following Material Design 3, unidirectional data flow and state hoisting.</li>
+     <li>Used Gradle Kotlin DSL for modern dependency management and multi-screen compatibility.</li>
+    </ul>
+    <div class="chips"><span class="chip">Kotlin</span><span class="chip">Jetpack Compose</span><span class="chip">Android SDK</span><span class="chip">Gradle KTS</span><span class="chip">Material 3</span></div>
+   </div>
+
+   <div class="proj" data-c="data">
+    <div class="tag">Data Science · Healthcare</div>
+    <h3>Hypertension Prediction Models</h3>
+    <ul>
+     <li>University of Ilorin, Dept. of Computer Science (2022–2023), Team Lead.</li>
+     <li>Conducted extensive EDA, feature selection, model training and testing.</li>
+     <li>Delivered the final software with Python Streamlit.</li>
+    </ul>
+    <div class="chips"><span class="chip">Python</span><span class="chip">EDA</span><span class="chip">Machine Learning</span><span class="chip">Streamlit</span></div>
+   </div>
+
+   <div class="proj" data-c="data">
+    <div class="tag">Data Science · Business</div>
+    <h3>Business Success Prediction Models</h3>
+    <ul>
+     <li>Sterling University (Jun–Nov 2022), Team Lead.</li>
+     <li>Evaluated the impact of successful businesses; ran EDA, feature selection, training and testing.</li>
+     <li>Built the prediction app with Python Streamlit.</li>
+    </ul>
+    <div class="chips"><span class="chip">Python</span><span class="chip">EDA</span><span class="chip">Feature Selection</span><span class="chip">Streamlit</span></div>
+   </div>
+
+   <div class="proj" data-c="web">
+    <div class="tag">Healthcare Systems</div>
+    <h3>Blood Donor Management System (UITH)</h3>
+    <ul>
+     <li>University of Ilorin (2021–2022), Team Lead.</li>
+     <li>Handled requirements gathering and designed donor data standardization and collection protocols.</li>
+     <li>Defined metadata standards for efficient access across systems and developed the system interface.</li>
+    </ul>
+    <div class="chips"><span class="chip">Requirements</span><span class="chip">Data Standards</span><span class="chip">Metadata</span><span class="chip">UI Development</span></div>
+   </div>
+
+   <div class="proj" data-c="web">
+    <div class="tag">Systems Design</div>
+    <h3>Expiration Date Notification System</h3>
+    <ul>
+     <li>University of Ilorin (2020–2021), Team Lead.</li>
+     <li>Designed the system framework and database; directed and supervised the full project.</li>
+     <li>Carried out an extensive literature review.</li>
+    </ul>
+    <div class="chips"><span class="chip">System Design</span><span class="chip">Database Design</span><span class="chip">Project Leadership</span></div>
+   </div>
+
+   <div class="proj" data-c="ai web">
+    <div class="tag">Research · AI</div>
+    <h3>Intelligent Portal for Tertiary Institutions</h3>
+    <ul>
+     <li>University of Ilorin (2020–2021), Researcher.</li>
+     <li>Evaluated existing Nigerian university portals and conducted requirement gathering and interviews.</li>
+     <li>Modelled a rule-based inference engine to add an AI advisor to the portal.</li>
+    </ul>
+    <div class="chips"><span class="chip">Inference Engine</span><span class="chip">Rule-Based AI</span><span class="chip">Research</span></div>
+   </div>
+
+  </div>
+ </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+ <div class="rv">
+  <h2 class="title">Latest <span>Articles</span></h2><div class="bar"></div>
+  <p class="sub">Notes on building secure AI agents, inclusive software and data products.</p>
+  <div class="blog-grid" id="blogGrid"></div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+ <div class="rv">
+  <h2 class="title">Work <span>Experience</span></h2><div class="bar"></div>
+  <div class="timeline">
+
+   <div class="t-item">
+    <h3>Founder &amp; Lead Software Architect / Technical Director</h3>
+    <div class="meta">Prince and Prince Technologies Ltd · Osogbo, Nigeria · 2025 – Present</div>
+    <ul>
+     <li>Lead end-to-end design and deployment of scalable custom software, AI-driven automation tools and data management systems for diverse clients.</li>
+     <li>Architect secure network topologies, database systems and backends using Python, Java, PHP and modern web/mobile frameworks.</li>
+     <li>Integrate machine learning workflows, predictive analytics and generative AI features into enterprise applications.</li>
+     <li>Lead a cross-functional team: SRS, sprint planning, code reviews and deployment pipelines.</li>
+     <li>Oversee technical curriculum and training for the company's academy arm, training emerging developers in software architecture and data science.</li>
+    </ul>
+   </div>
+
+   <div class="t-item">
+    <h3>Data Scientist (Freelance)</h3>
+    <div class="meta">EYAI · 2021 – 2025</div>
+    <ul>
+     <li>Analyzed complex datasets using advanced querying, visualization and analytics tools in Python and SQL.</li>
+     <li>Built and validated forecasting and prediction models to increase company productivity.</li>
+     <li>Set up an SQL database on cloud servers to store client data for query analysis.</li>
+     <li>Worked with stakeholders on quarterly roadmaps based on impact, effort and test coordination.</li>
+     <li>Designed surveys and polls to improve data collection; produced polished visualizations for scientists and business managers.</li>
+     <li>Applied feature selection, loss functions and variance explanation techniques to compare model performance.</li>
+    </ul>
+   </div>
+
+   <div class="t-item">
+    <h3>Web Developer &amp; Robotics Project Instructor</h3>
+    <div class="meta">Kiddiesdroid · 2020 – 2021</div>
+    <ul>
+     <li>Trained the company's largest team of web developers, software engineers and robotics engineers.</li>
+     <li>Head of Robotics department and project supervisor, communicating team needs across departments.</li>
+     <li>Computer programming instructor.</li>
+    </ul>
+   </div>
+
+   <div class="t-item">
+    <h3>Senior Web Developer &amp; Network Engineer (SIWES)</h3>
+    <div class="meta">E-Lapariah Tech · May 2019 – January 2020</div>
+    <ul>
+     <li>Networking of the entire Kwara State Govt. New Secretariat Complex</li>
+     <li>Installed, configured and troubleshot LAN networks.</li>
+     <li>Designed and developed an internal hotspot login interface for clients and websites.</li>
+     <li>Assisted the team on various ISP projects.</li>
+    </ul>
+   </div>
+
+  </div>
+ </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+ <div class="rv">
+  <h2 class="title">Education, <span>Certifications &amp; Leadership</span></h2><div class="bar"></div>
+  <div class="two">
+   <div class="box"><h3>🎓 Education</h3><ul>
+    <li><b>BSc Computer Science</b> — University of Ilorin, Nigeria (2016–2021). Graduated with honors.</li>
+    <li><b>Secondary School</b> — Bazohure/Igonigon, Abi L.G.A., Cross River State (2005–2011)</li>
+    <li><b>Primary School</b> — St. Michael Primary School, Igonigoni, Abi L.G.A. (2001–2005)</li>
+   </ul></div>
+
+   <div class="box"><h3>🏆 Achievements</h3><ul>
+    <li>Recipient, <b>Chief Awojide Character Scholarship Award</b> (2016–2021)</li>
+    <li><b>DataCamp Mastery with XP:</b> top 1% of learners, five certificates in Python, SQL and Data Science</li>
+    <li>Built data science software, web and desktop applications, and prediction models</li>
+    <li>Trained data scientists and software engineers</li>
+   </ul></div>
+
+   <div class="box"><h3>📜 Certifications</h3><ul>
+    <li>World Bank Group Youth Summit Delegate (2024, 2025, 2026)</li>
+    <li>Data Science with Python</li>
+    <li>Cisco Introductory Cyber Security</li>
+    <li>Career Essentials in Generative AI</li>
+    <li>DataCamp Certificates: Python, SQL &amp; Data Science</li>
+    <li>NYSC Certificate of National Service (2021–2022)</li>
+    <li>NYSC SAED Entrepreneur Certificate</li>
+    <li>NYSC Atisbo L.G.A Certificate of Leadership</li>
+    <li>NCCF Certificate of Honour</li>
+    <li>Volunteer Certificate, Engaged Youth Africa Initiative</li>
+   </ul></div>
+
+   <div class="box"><h3>🌟 Leadership</h3><ul>
+    <li>NYSC Unit Head</li>
+    <li>President, FYB CIS Faculty, University of Ilorin</li>
+    <li>President, Zonal Youth</li>
+    <li>Financial Secretary, NCCF</li>
+    <li>General Secretary, CSCSF</li>
+    <li>Secretary, Unity AGE Group</li>
+    <li>Treasurer, SOD</li>
+    <li>Member, Google Developers Student Clubs</li>
+    <li>Volunteer, Engaged Youth Africa Initiative</li>
+   </ul></div>
+  </div>
+ </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+ <div class="rv">
+  <h2 class="title">Let's <span>Work Together</span></h2><div class="bar"></div>
+  <p class="sub">Have a project, a role or a collaboration in mind? Send a message and I'll get back to you.</p>
+  <div class="c-wrap">
+   <div class="c-info">
+    <a class="c-card" href="mailto:nelsoncelestine222@gmail.com"><small>Email</small>✉️ nelsoncelestine222@gmail.com</a>
+    <a class="c-card" href="https://www.linkedin.com/in/celestine-nelson" target="_blank" rel="noopener"><small>LinkedIn</small>💼 celestine-nelson</a>
+    <a class="c-card" href="tel:+2349152475748"><small>Phone</small>📞 +234 915 247 5748</a>
+    <div class="c-card"><small>Location</small>📍 Osogbo, Osun State, Nigeria</div>
+   </div>
+
+   <form class="c-form" id="cf" novalidate>
+    <div class="row">
+     <div class="fld" id="f-name"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Jane Doe"><div class="err">Please enter your name.</div></div>
+     <div class="fld" id="f-email"><label for="email">Your email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="jane@example.com"><div class="err">Please enter a valid email.</div></div>
+    </div>
+    <div class="fld" id="f-subject"><label for="subject">Subject</label><input id="subject" name="subject" type="text" placeholder="Project enquiry"><div class="err">Please add a subject.</div></div>
+    <div class="fld" id="f-message"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell me about your project..."></textarea><div class="err">Please write a message (at least 10 characters).</div></div>
+    <input class="hp" type="text" id="botcheck" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button class="btn p" type="submit" id="send">Send Message</button>
+    <div class="status" id="status" role="status" aria-live="polite"></div>
+   </form>
+  </div>
+ </div>
+</section>
+
+<footer>© <span id="yr"></span> Celestine Nelson Abraham. All rights reserved.</footer>
+
+<!-- BLOG MODAL -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-title">
+ <div class="m-box">
+  <button class="m-close" id="mclose" aria-label="Close article">✕</button>
+  <div class="post-meta" id="m-meta"></div>
+  <h2 id="m-title"></h2>
+  <div id="m-body"></div>
+ </div>
+</div>
+
+<script>
+/* ============ CONFIG ============ */
+// Contact form: get a free access key at https://web3forms.com (enter your email, key arrives by email),
+// then paste it below. Messages will be delivered to your inbox.
+// If left empty, the form falls back to opening the visitor's email app with the message pre-filled.
+const WEB3FORMS_KEY = 'a2be9a09-1742-4a48-8e46-a7863638855f';
+const CONTACT_EMAIL = 'nelsoncelestine222@gmail.com';
+
+// Profile photo: paste an image URL to replace the initials in the hero.
+const PHOTO_URL = 'img/nelson.jpg';
+
+/* ============ BLOG POSTS (edit me) ============ */
+const POSTS = [
+ {
+  id:'agents-pii', emoji:'🛡️', cat:'AI Security', date:'Oct 12, 2026', read:'5 min read',
+  grad:'linear-gradient(135deg,#5b8cff55,#22d3b655)',
+  title:'Building an Expense Agent That Can\'t Be Talked Into Anything',
+  excerpt:'How I combined graph routing, human-in-the-loop checkpoints and a PII/prompt-injection gate to make an ambient AI agent safe for finance workflows.',
+  body:`<p>Finance workflows are a great fit for AI agents: lots of repetitive evaluation, clear rules, and real time pressure. They are also a perfect target for abuse. When I built the Autonomous Enterprise Expense Agent with Google ADK and Gemini, security came first, not last.</p>
+  <h4>1. Route with code, not vibes</h4>
+  <p>Low-risk expenses (under $100) are auto-approved by deterministic code-based routing. The LLM is only asked to reason where reasoning is genuinely needed. Fewer model calls means lower latency, lower cost and a smaller attack surface.</p>
+  <h4>2. Keep a human in the loop</h4>
+  <p>For higher-value claims, the graph pauses at a Human-in-the-Loop checkpoint using <code>RequestInput</code> and waits for a manager's sign-off. The agent can recommend, but it cannot silently approve large spend.</p>
+  <h4>3. Guard the boundary</h4>
+  <ul><li>Redact PII such as SSNs and credit card numbers before text ever reaches the model.</li><li>Intercept prompt-injection attempts at a checkpoint in front of the LLM.</li><li>Validate every tool argument with strict Pydantic schemas.</li></ul>
+  <h4>4. Test the state machine</h4>
+  <p>I simulated Pub/Sub payloads in integration tests so every state transition is deterministic and every failure path is covered. If you can't replay it, you can't trust it.</p>
+  <p><b>Takeaway:</b> treat the LLM as one component inside a well-defended system, not as the system itself.</p>`
+ },
+ {
+  id:'usba', emoji:'📱', cat:'Inclusive Design', date:'Sep 28, 2026', read:'4 min read',
+  grad:'linear-gradient(135deg,#7a5bff55,#5b8cff55)',
+  title:'Designing a Bank for Everyone: Voice, Haptics and USSD Fallback',
+  excerpt:'Lessons from the Inclusive Banking App: accessibility for visually/hearing-impaired and low-literacy users, plus working when the internet doesn\'t.',
+  body:`<p>Financial independence shouldn't depend on good eyesight, strong literacy or a perfect data connection. The Inclusive Banking App (IBA) started from that idea.</p>
+  <h4>Accessibility as a requirement, not a feature</h4>
+  <p>We wrote WCAG AAA into the Software Requirements Specification from day one. That shaped the product: local-language voice commands, AI-powered visual bill recognition, and haptic feedback loops that confirm actions without relying on sight or sound.</p>
+  <h4>Resilience in low-connectivity regions</h4>
+  <p>Many users are on patchy networks. An automated offline USSD fallback lets transactions continue even when the app can't reach the server, so the service stays dependable where it matters most.</p>
+  <h4>Security without friction</h4>
+  <p>Biometric authentication keeps accounts safe without forcing users to remember complex passwords, a big win for accessibility and security alike.</p>
+  <ul><li>Write accessibility into the SRS early.</li><li>Test with real users from the target groups.</li><li>Always design the offline path.</li></ul>`
+ },
+ {
+  id:'eda-streamlit', emoji:'📊', cat:'Data Science', date:'Sep 10, 2026', read:'6 min read',
+  grad:'linear-gradient(135deg,#22d3b655,#fbbf2455)',
+  title:'From EDA to Streamlit: Shipping a Prediction Model People Can Use',
+  excerpt:'My workflow from exploratory analysis and feature selection to a deployable Streamlit app, drawn from hypertension and business-success prediction projects.',
+  body:`<p>A model in a notebook helps nobody. In my hypertension and business-success prediction projects, the real goal was software that clinicians and business owners could use.</p>
+  <h4>Step 1: Understand the data</h4>
+  <p>Extensive exploratory data analysis (EDA) comes first: distributions, missing values, leakage and class balance. Most modelling problems are data problems in disguise.</p>
+  <h4>Step 2: Select features deliberately</h4>
+  <p>Feature selection reduces noise and makes results easier to explain, which matters a great deal in healthcare. I compare models using loss functions and variance explained rather than a single headline score.</p>
+  <h4>Step 3: Train, test and validate</h4>
+  <p>Hold out data properly and validate for prediction accuracy on the outcome of interest before anything is shown to a user.</p>
+  <h4>Step 4: Wrap it in Streamlit</h4>
+  <p>Streamlit turns a Python model into an interactive app quickly: input form, prediction, and a plain-language result. Fast iteration with stakeholders beats a perfect model nobody opens.</p>`
+ }
+];
+
+/* ============ THEME ============ */
+const root = document.documentElement;
+const tbtn = document.getElementById('theme');
+function setTheme(t){
+ root.setAttribute('data-theme', t);
+ tbtn.textContent = t === 'dark' ? '☀️' : '🌙';
+ tbtn.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+}
+// Start from the visitor's system preference (no storage APIs used in this preview)
+setTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+tbtn.onclick = () => setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+
+/* ============ BASICS ============ */
+document.getElementById('yr').textContent = new Date().getFullYear();
+const links = document.getElementById('links');
+document.getElementById('burger').onclick = () => links.classList.toggle('open');
+links.querySelectorAll('a').forEach(a => a.onclick = () => links.classList.remove('open'));
+if (PHOTO_URL) document.getElementById('av').innerHTML = '<img src="' + PHOTO_URL + '" alt="Celestine Nelson Abraham">';
+
+// typing effect
+const roles = ['Computer Scientist','AI & Agentic Systems Engineer','Data Scientist','Software Architect','Founder, Prince & Prince Technologies','Network Engineer'];
+let ri=0, ci=0, del=false;
+const typed = document.getElementById('typed');
+(function type(){
+ const w = roles[ri];
+ typed.textContent = del ? w.slice(0,--ci) : w.slice(0,++ci);
+ let d = del ? 40 : 80;
+ if(!del && ci===w.length){ d=1600; del=true; }
+ else if(del && ci===0){ del=false; ri=(ri+1)%roles.length; d=300; }
+ setTimeout(type,d);
+})();
+
+// project filter
+document.querySelectorAll('.f').forEach(b => b.onclick = () => {
+ document.querySelectorAll('.f').forEach(x => x.classList.remove('on'));
+ b.classList.add('on');
+ const f = b.dataset.f;
+ document.querySelectorAll('.proj').forEach(p => {
+  p.style.display = (f==='all' || p.dataset.c.split(' ').includes(f)) ? 'flex' : 'none';
+ });
+});
+
+// scroll reveal
+const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } }), {threshold:.08});
+document.querySelectorAll('.rv').forEach(e => io.observe(e));
+
+/* ============ BLOG ============ */
+const grid = document.getElementById('blogGrid');
+const modal = document.getElementById('modal');
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+POSTS.forEach(p => {
+ const b = document.createElement('button');
+ b.className = 'post';
+ b.setAttribute('aria-label', 'Read article: ' + p.title);
+ b.innerHTML =
+  '<div class="post-top" style="background:' + p.grad + '">' + p.emoji + '</div>' +
+  '<div class="post-body">' +
+   '<div class="post-meta"><span class="cat">' + esc(p.cat) + '</span><span>' + esc(p.date) + '</span><span>' + esc(p.read) + '</span></div>' +
+   '<h3>' + esc(p.title) + '</h3><p>' + esc(p.excerpt) + '</p><span class="more">Read article →</span>' +
+  '</div>';
+ b.onclick = () => openPost(p, b);
+ grid.appendChild(b);
+});
+let lastFocus = null;
+function openPost(p, trigger){
+ lastFocus = trigger;
+ document.getElementById('m-meta').innerHTML = '<span class="cat" style="color:var(--accent2);font-weight:600;text-transform:uppercase;letter-spacing:.06em">' + esc(p.cat) + '</span><span>' + esc(p.date) + '</span><span>' + esc(p.read) + '</span>';
+ document.getElementById('m-meta').className = 'post-meta';
+ document.getElementById('m-title').textContent = p.title;
+ document.getElementById('m-body').innerHTML = p.body;
+ modal.classList.add('open');
+ document.body.style.overflow = 'hidden';
+ document.getElementById('mclose').focus();
+}
+function closePost(){
+ modal.classList.remove('open');
+ document.body.style.overflow = '';
+ if(lastFocus) lastFocus.focus();
+}
+document.getElementById('mclose').onclick = closePost;
+modal.addEventListener('click', e => { if(e.target === modal) closePost(); });
+document.addEventListener('keydown', e => { if(e.key === 'Escape' && modal.classList.contains('open')) closePost(); });
+
+/* ============ CONTACT FORM ============ */
+const form = document.getElementById('cf');
+const statusEl = document.getElementById('status');
+const sendBtn = document.getElementById('send');
+let lastSent = 0;
+
+function setStatus(kind, msg){
+ statusEl.className = 'status ' + kind;
+ statusEl.textContent = msg;
+}
+function validate(){
+ const v = {
+  name: form.name.value.trim(),
+  email: form.email.value.trim(),
+  subject: form.subject.value.trim(),
+  message: form.message.value.trim()
+ };
+ const checks = {
+  name: v.name.length >= 2,
+  email: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.email),
+  subject: v.subject.length >= 2,
+  message: v.message.length >= 10
+ };
+ let ok = true;
+ Object.keys(checks).forEach(k => {
+  document.getElementById('f-' + k).classList.toggle('bad', !checks[k]);
+  if(!checks[k]) ok = false;
+ });
+ return ok ? v : null;
+}
+['name','email','subject','message'].forEach(k => {
+ form[k].addEventListener('input', () => document.getElementById('f-' + k).classList.remove('bad'));
+});
+
+form.addEventListener('submit', async e => {
+ e.preventDefault();
+ if(form.botcheck.value) return;                       // honeypot: bots fill this in
+ const v = validate();
+ if(!v){ setStatus('fail', 'Please fix the highlighted fields and try again.'); return; }
+ if(Date.now() - lastSent < 15000){ setStatus('fail', 'Please wait a few seconds before sending another message.'); return; }
+
+ // Fallback: no key configured -> open visitor's email app with message pre-filled
+ if(!WEB3FORMS_KEY){
+  const body = 'Name: ' + v.name + '\nEmail: ' + v.email + '\n\n' + v.message;
+  const url = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(v.subject) + '&body=' + encodeURIComponent(body);
+  window.location.href = url;
+  setStatus('ok', 'Opening your email app with your message ready to send. (Site owner: add a Web3Forms key to send directly from the page.)');
+  return;
+ }
+
+ sendBtn.disabled = true;
+ sendBtn.textContent = 'Sending...';
+ setStatus('', '');
+ statusEl.className = 'status';
+ try{
+  const res = await fetch('https://api.web3forms.com/submit', {
+   method:'POST',
+   headers:{'Content-Type':'application/json','Accept':'application/json'},
+   body: JSON.stringify({
+    access_key: WEB3FORMS_KEY,
+    name: v.name,
+    email: v.email,
+    subject: 'Portfolio: ' + v.subject,
+    message: v.message,
+    from_name: 'Portfolio Contact Form'
+   })
+  });
+  const data = await res.json();
+  if(res.ok && data.success){
+   lastSent = Date.now();
+   form.reset();
+   setStatus('ok', 'Thank you, ' + v.name.split(' ')[0] + '! Your message has been sent. I\'ll reply soon.');
+  } else {
+   throw new Error(data.message || 'Request failed');
+  }
+ } catch(err){
+  setStatus('fail', 'Sorry, your message could not be sent. Please email me directly at ' + CONTACT_EMAIL + '.');
+ } finally {
+  sendBtn.disabled = false;
+  sendBtn.textContent = 'Send Message';
+ }
+});
+</script>
+</body>
+</html>
